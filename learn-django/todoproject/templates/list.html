@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">TODOリスト</h1>
+        <p class="lead">作りました。</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% for item in object_list %}
+<div class="container">
+    <div class="alert alert-{{item.priority}}" role="alert">
+        <p>{{ item.title }}</p>
+        <a href="{% url 'update' item.pk %}" role="button" class="btn btn-outline-primary" aria-pressed="true">編集 </a>
+        <a href="{% url 'delete' item.pk %}" role="button" class="btn btn-outline-danger" aria-pressed="true">削除</a>
+        <a href="{% url 'detail' item.pk %}" role="button" class="btn btn-outline-success" aria-pressed="true">詳細 </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
