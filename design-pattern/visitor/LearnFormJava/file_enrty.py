@@ -1,4 +1,7 @@
-from visit import Visitor
+from typing import TypeVar
+
+
+Visitor = TypeVar('Visitor')
 
 
 class File():

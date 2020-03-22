@@ -23,14 +23,8 @@ class ListVisitor(Visitor):
         print(file)
 
     def visit_directory(self, directory: Directory) -> None:
-        print(directory)
-        savedir = self.__currentdir
         self.__currentdir = self.__currentdir + "/" + directory.get_name()
-        it = directory.iterator()
-        try:
-            while(it.__next__()):
-                entry = Directory(it.__next__())
-                entry.accept(self)
-        except StopIteration:
-            pass
-        self.__currentdir = savedir
+        directory_dir = directory.get_dir()
+        for entry in directory_dir:
+            entry.accept(self)
+        print(self.__currentdir)
