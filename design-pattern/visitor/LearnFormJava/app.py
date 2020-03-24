@@ -4,6 +4,7 @@ from directory_entry import Directory
 
 if __name__ == "__main__":
     print('Making root entries')
+
     rootdir = Directory('root')
     bindir = Directory('bin')
     tmpdir = Directory('tmp')
@@ -11,6 +12,7 @@ if __name__ == "__main__":
     rootdir.add(bindir)
     tmpdir.add(usrdir)
     rootdir.add(tmpdir)
-    rootdir.accept(ListVisitor())
+    # 一覧表示
     print("--------------")
+    rootdir.accept(ListVisitor())
     tmpdir.accept(ListVisitor())

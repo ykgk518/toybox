@@ -18,7 +18,7 @@ class Printer(object):
         ))
 
 
-class Visit():
+class Connect():
     def __init__(self, visited, vistor):
         self.__cls = visited.__class__.__name__
         self.__method_name = 'visit_%s' % self.__cls
