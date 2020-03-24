@@ -1,4 +1,4 @@
-from visitor import VisitableList, VisitableDict, Printer, Visit
+from visitor import VisitableList, VisitableDict, Printer, Connect
 
 
 def main():
@@ -9,7 +9,8 @@ def main():
     vistitable_dict.accept(Printer())
 
     # VisitorクラスとVisitableクラスを動的に接続する
-    Visit([1, 2, 3], Printer())
+    Connect([1, 2, 3], Printer())
+    Connect({'one': 1, 'two': 2, 'three': 3}, Printer())
 
 
 if __name__ == "__main__":
