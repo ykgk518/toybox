@@ -1,6 +1,20 @@
 # TODOアプリ作成で学んだことをメモ
 
+## Djangoにおける「プロジェクト」と「アプリケーション」という概念
+
+Djangoにおける「プロジェクト」と「アプリケーション」という固有の概念について整理します。
+
+DjangoでWebアプリを開発するにあたり、まず最初に「プロジェクト」というフォルダを作成します。
+このフォルダを作成すると、いくつかのモジュールが自動で作成されてあります。
+これらのモジュールを操作することで、開発するWebアプリの全体の設定等の操作が行えます。
+
+「プロジェクト」がWebアプリ全体の管理・設定を行う場所であることに対して、
+「アプリケーション」は具体的な業務処理やサービスに必要な機能を実装するための場所。(みたいなイメージ)
+
+Djangoを使った開発では「プロジェクト」に「アプリケーション」を次々追加する形で機能を組み込んでいくのが基本的な開発スタイル。
+
 ## 初期設定
+
 
 ### プロジェクトの作成
 
@@ -16,9 +30,15 @@ $ python manage.py startapp todo
 
 ### settings.pyの設定
 
+
+ここでやることは以下の2つのこと。
+
+* 静的ファイルを参照できるように設定(`templates`フォルダの設定)
+* `startapp todo`で作成したアプリを`todoprojectt`から参照できるように設定
+
 #### templatesフォルダの指定
 
-1. `templates` フォルダ作成
+1. htmlファイルを格納するための`templates` フォルダ作成する。
 2. `TEMPLATES.DIRS` に `[BASE_DIR, 'template']` を書き込む。
 
 ##### 1. `templates` フォルダ作成
@@ -32,7 +52,7 @@ manage.py  README.md  templates  todo  todoproject
 
 ##### 2. `TEMPLATES.DIRS` に `[BASE_DIR, 'template']` を書き込む。
 
-``` python settings.py
+```settings.py
 
 TEMPLATES = [
 
@@ -58,7 +78,7 @@ TEMPLATES = [
 
 `INSTALLED_APPS` に `todo` を追加
 
-```python settings.py
+```settings.py
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,7 +94,7 @@ INSTALLED_APPS = [
 ### プロジェクトとアプリのurls.pyを繋げる
 
 プロジェクトのurls.pyを編集
-```python urls.py
+```urls.py
 from django.contrib import admin
 from django.urls import path, include
 
@@ -99,7 +119,7 @@ $ touch todo/urls.py
 
 アプリのmodels.pyでデータベースのテーブルに
 
-```python models.py
+```models.py
 from django.db import models
 
 # Create your models here.
@@ -163,7 +183,7 @@ Password (again):
 ### 管理画面にてデータモデルを操作(ここはいらないかも)
 
 アプリにあるadmin.pyを編集
-```python adimn.py
+```adimn.py
 from django.contrib import admin
 from .models import TodoModel
 
@@ -179,7 +199,7 @@ admin.site.register(TodoModel)
 
 `urls.py` でPKを決める
 
-``` python urls.py
+```urls.py
 from django.urls import path
 from .views import TodoList, TodoDetail
 
