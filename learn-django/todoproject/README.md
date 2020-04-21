@@ -94,6 +94,7 @@ INSTALLED_APPS = [
 ### プロジェクトとアプリのurls.pyを繋げる
 
 プロジェクトのurls.pyを編集
+
 ```urls.py
 from django.contrib import admin
 from django.urls import path, include
@@ -114,10 +115,25 @@ $ touch todo/urls.py
 ```
 
 ## データベース周り
+Djangoは「Django ORM」と呼ばれるORマッパーの機能がある。
+ORマッパーとはデータベースのテーブルと属性の定義と、「モデル」と呼ばれるクラスとクラスの属性を対応させて、
+データベースのレコードをオブジェクトとして扱えるようにする仕組み。
+
+Djangoには「マイグレーション」という機能が備わっていて、
+「モデルの作成」→「マイグレーション」
+の順にデータベースを操作していく。
+
+
+* model.pyの作成
+* makemigrations
+* migrate
+
 
 ### model.pyの作成
+model.pyでデータベースのテーブルの形式を決定します。
 
-アプリのmodels.pyでデータベースのテーブルに
+アプリのmodels.pyでテーブル属性のデータの形式に対応するように記述。
+[モデルフィールドリファレンス]https://docs.djangoproject.com/ja/3.0/ref/models/fields/
 
 ```models.py
 from django.db import models
@@ -128,10 +144,14 @@ class TodoModel(models. Model):
 
     title = models.CharField(max_length=32)
     memo = models.TextField()
+    priority = models.CharField(max_length=50, choices=PRIORITY)
+    duedata = models.DateField()
 
 ``` 
 
-### マイグレーション
+
+### makemigrations
+
 
 ```bash 
 
@@ -183,6 +203,7 @@ Password (again):
 ### 管理画面にてデータモデルを操作(ここはいらないかも)
 
 アプリにあるadmin.pyを編集
+
 ```adimn.py
 from django.contrib import admin
 from .models import TodoModel
