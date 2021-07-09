@@ -1,0 +1,4 @@
+#Sat Jul 25 21:03:23 JST 2020
+base.0=C\:\\Users\\gakuy\\Documents\\Desktop\\work\\toybox\\picture_book\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
