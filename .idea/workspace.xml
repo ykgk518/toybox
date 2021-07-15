@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cbd951d-6e76-44bc-822f-3bb7516c8cd6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/toybox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toybox.iml" afterDir="false" />
+    <list default="true" id="4cbd951d-6e76-44bc-822f-3bb7516c8cd6" name="Default Changelist" comment="ide進化">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +22,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/toybox-vue" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="C:/Users/gakuy/Documents/work/toybox" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -62,11 +63,35 @@
       <updated>1626387742149</updated>
       <workItem from="1626387743458" duration="782000" />
       <workItem from="1626388546899" duration="969000" />
+      <workItem from="1626389539984" duration="943000" />
     </task>
+    <task id="LOCAL-00001" summary="ide進化">
+      <created>1626389683835</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626389683835</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ide進化" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide進化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
